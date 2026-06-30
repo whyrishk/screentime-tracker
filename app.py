@@ -198,6 +198,17 @@ def tracking_loop():
 
 
 # ── API Routes ────────────────────────────────────────────────────────────────
+@app.route("/")
+def home():
+    return jsonify({
+        "status": "running",
+        "message": "Screen Time Tracker Backend is running 🚀"
+    })
+
+
+@app.route("/api/health")
+def health():
+    return jsonify({"status": "ok"})
 
 @app.route("/api/status")
 def status():
